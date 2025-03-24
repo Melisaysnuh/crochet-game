@@ -6,7 +6,7 @@ const myDiagonal = 29
 const myLength = calculateL(29)
 
 
-// Helper: sides from diagonal
+// Helper: sides from diagonal - the pattern for each square starts at a diagonal and reduces stitches in order to make a triangle. Because it's easier to create the squares in Javascript as rows, we need to use some math to calculate the length from the diagonal.
 
 function calculateL(diagonalStitches) {
   const length = Math.round(diagonalStitches / Math.sqrt(2));
@@ -28,7 +28,7 @@ function rotate90(L, mat) {
   return mat;
 }
 
-// * create squares, with 2 motifs
+//  create squares, with 2 motifs
 
 function square(length, stripe1, stripe2, solid) {
   const matrix = []
@@ -37,6 +37,7 @@ function square(length, stripe1, stripe2, solid) {
     let row = [];
     for (let j = 0; j < length; j++) {
       row.push(solid)
+      console.log(row)
     }
     matrix.push(row)
   }
